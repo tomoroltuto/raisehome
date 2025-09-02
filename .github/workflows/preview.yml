@@ -1,52 +1,40 @@
-name: Deploy to GitHub Pages
+name: PR Preview
 
 on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
+  pull-requests: write
 
 jobs:
-  deploy:
+  deploy-preview:
     runs-on: ubuntu-latest
+    if: github.event.action != 'closed'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Deploy Preview
+        uses: rossjrw/pr-preview-action@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
+          source-dir: ./
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: deploy
 
-      - name: Setup Git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+  remove-preview:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'closed'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Check if gh-pages exists
-        run: |
-          if git ls-remote --exit-code --heads origin gh-pages; then
-            echo "gh-pages branch exists"
-          else
-            echo "Creating gh-pages branch"
-            git checkout --orphan gh-pages
-            git rm -rf .
-            echo "# GitHub Pages" > README.md
-            git add README.md
-            git commit -m "Initial gh-pages commit"
-            git push origin gh-pages
-            git checkout main
-          fi
-
-      - name: Deploy to gh-pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Remove PR Preview
+        uses: rossjrw/pr-preview-action@v1
         with:
-          folder: ./
-          branch: gh-pages
-          clean-exclude: pr-preview
-          single-commit: false
-          force: false
-          git-config-name: github-actions[bot]
-          git-config-email: 41898282+github-actions[bot]@users.noreply.github.com
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: remove
+        continue-on-error: true
