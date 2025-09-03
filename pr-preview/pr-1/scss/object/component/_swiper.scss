@@ -39,3 +39,16 @@
     color: variables.$color-gray;
   }
 }
+
+@media screen and (max-width: variables.$bp-sp) {
+  .swiper-pagination {
+    padding-bottom: 10px !important;
+  }
+
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0 13px !important;
+    margin-right: 0 !important;
+  }
+}
