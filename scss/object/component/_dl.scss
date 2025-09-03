@@ -1,0 +1,65 @@
+@use "../../foundation/variables";
+
+.c-dl {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  border-top: 1px solid variables.$color-gray;
+
+  &__dt,
+  &__dd {
+    border-bottom: 1px solid variables.$color-gray;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    word-break: break-word;
+    color: variables.$color-gray;
+    margin: 0;
+  }
+
+  &__dt {
+    background-color: #e7e3df;
+    font-size: 16px;
+    font-weight: 700;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__dd {
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 40px;
+  }
+}
+
+@media screen and (max-width: variables.$bp-tab) {
+  .c-dl {
+    grid-template-columns: 160px 1fr;
+  }
+}
+
+@media screen and (max-width: variables.$bp-sp) {
+  .c-dl {
+    display: block;
+    width: 100%;
+
+    &__dt {
+      border: hidden;
+    }
+
+    &__dt,
+    &__dd {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      height: 64px;
+    }
+
+    &__dd {
+      text-align: center;
+      line-height: normal;
+    }
+  }
+}

@@ -28,5 +28,150 @@
     <script src="js/main.js" defer></script>
   </head>
   <body>
+   <header class="l-header">
+      <div class="l-header__logo">
+        <a href="top.html">
+          <img src="images/top/Logo (1).svg" alt="Raise Home" />
+        </a>
+      </div>
+      <div class="l-header__hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="l-header__nav">
+        <ul class="l-header__nav-list">
+          <li class="l-header__nav-item"><a href="company.html">会社概要</a></li>
+          <li class="l-header__nav-item"><a href="access.html">アクセス</a></li>
+          <li class="l-header__nav-item l-header__nav-item--contact">
+            <a href="contact.html">お問い合わせ</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="l-pageHeader l-pageHeader--contact">
+        <div class="l-pageHeader__title">
+          <h1>お問い合わせ</h1>
+        </div>
+      </div>
+
+      <section class="p-contact">
+        <div class="l-container l-container--contact">
+          <div class="p-contact__profile">
+            <div class="p-contact__header">
+              <p class="p-contact__title">
+                お問い合わせ・ご相談は <br>こちらのフォームから
+              </p>
+            </div>
+
+            <div class="p-contact__form">
+              <form>
+                <div class="c-field">
+                  <label class="c-field__label" for="name">
+                    お名前<span class="c-field__required">必須</span>
+                  </label>
+                  <input type="text" id="name" name="name" class="c-field__input" placeholder="例）山田太郎" required>
+                </div>
+
+                <div class="c-field">
+                  <label class="c-field__label" for="company">企業名</label>
+                  <input type="text" id="company" name="company" class="c-field__input" placeholder="例）株式会社RAISEHOME">
+                </div>
+
+                <div class="c-field">
+                  <label class="c-field__label" for="email">
+                    メールアドレス<span class="c-field__required">必須</span>
+                  </label>
+                  <input type="email" id="email" name="email" class="c-field__input" placeholder="例）example@mail.com" required>
+                </div>
+
+                <div class="c-field">
+                  <span class="c-field__label">
+                    お問い合わせ種別（選択してください）<span class="c-field__required">必須</span>
+                  </span>
+                  <div class="c-radioGroup">
+                    <div class="c-radioGroup__option">
+                      <input type="radio" id="inquiry" name="inquiry_type" value="inquiry" required>
+                      <label for="inquiry">ご質問</label>
+                    </div>
+                    <div class="c-radioGroup__option">
+                      <input type="radio" id="request" name="inquiry_type" value="request" required>
+                      <label for="request">ご要望</label>
+                    </div>
+                    <div class="c-radioGroup__option">
+                      <input type="radio" id="viewing" name="inquiry_type" value="viewing" required>
+                      <label for="viewing">お見積もり</label>
+                    </div>
+                    <div class="c-radioGroup__option">
+                      <input type="radio" id="other" name="inquiry_type" value="other" required>
+                      <label for="other">その他</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="c-field">
+                  <label class="c-field__label" for="content">
+                    お問い合わせ内容<span class="c-field__required">必須</span>
+                  </label>
+                  <textarea id="content" name="content" class="c-field__textarea" placeholder="内容を入力してください。" required></textarea>
+                </div>
+
+                <div class="p-contact__agree">
+                  <input type="checkbox" id="privacy" name="privacy" required>
+                  <label for="privacy">利用規約、プライバシーポリシーに同意する</label>
+                </div>
+
+                <div class="p-contact__actions">
+                  <button type="submit" class="c-button-gray">送信する</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="l-footer">
+      <div class="l-footer__content">
+        <div class="l-footer__logo">
+          <a href="top.html" class="l-footer__logo-link">
+            <img src="images/top/Logo (2).svg" alt="Raise Home" />
+          </a>
+        </div>
+        <div class="l-footer__links">
+          <ul class="l-footer__nav">
+            <li class="l-footer__nav-item">
+              <a href="company.html" class="l-footer__nav-link">会社概要</a>
+            </li>
+            <li class="l-footer__nav-item">
+              <a href="access.html" class="l-footer__nav-link">アクセス</a>
+            </li>
+            <li class="l-footer__nav-item">
+              <a href="contact.html" class="l-footer__nav-link">お問い合わせ</a>
+            </li>
+          </ul>
+          <ul class="l-footer__sns">
+            <li class="l-footer__sns-item">
+              <a href="" class="l-footer__sns-link" aria-label="X (Twitter)">
+                <img src="images/top/akar-icons_x-fill.svg" alt="x" />
+              </a>
+            </li>
+            <li class="l-footer__sns-item">
+              <a href="" class="l-footer__sns-link" aria-label="Instagram">
+                <img src="images/top/streamline_instagram-solid.svg" alt="Instagram" />
+              </a>
+            </li>
+            <li class="l-footer__sns-item">
+              <a href="" class="l-footer__sns-link" aria-label="YouTube">
+                <img src="images/top/mdi_youtube.svg" alt="Youtube" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="l-footer__copyright">
+        <p>©2023RAISE HOME</p>
+      </div>
+    </footer>
   </body>
 </html>
