@@ -1,0 +1,15 @@
+# エディタ関連
+.vscode/
+.idea/
+*.sublime-*
+.DS_Store
+
+# 環境関連
+.env
+.env.*
+!.env.example
+
+# CSS関連の自動生成ファイル
+*.css.map
+*.min.css
+*.min.css.map
