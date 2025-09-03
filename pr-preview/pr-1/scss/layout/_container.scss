@@ -1,0 +1,23 @@
+@use "../foundation/variables";
+
+.l-container {
+  padding: 120px 180px;
+}
+
+@media screen and (max-width: variables.$bp-tab) {
+  .l-container {
+    padding: 88px 32px 88px 32px;
+  }
+}
+
+@media screen and (max-width: variables.$bp-sp) {
+  .l-container {
+    &--access,
+    &--contact {
+      padding: 56px 20px 56px 20px;
+    }
+    &--company {
+      padding: 56px 12px 54px 12px;
+    }
+  }
+}

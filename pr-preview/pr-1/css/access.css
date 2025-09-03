@@ -1,0 +1,176 @@
+.l-pageHeader {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 383px;
+  position: relative;
+}
+.l-pageHeader--access {
+  background-image: url("../images/access/Access_Main.png");
+  background-position: left 0 bottom 0;
+}
+.l-pageHeader--company {
+  background-image: url("../images/company/Company_Main.png");
+  background-position: center center;
+}
+.l-pageHeader--contact {
+  background-image: url("../images/contact/Contact_Main.png");
+  background-position: center center;
+}
+
+.l-pageHeader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.l-pageHeader .l-pageHeader__title {
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 175px;
+  left: 180px;
+  text-align: center;
+  z-index: 10;
+  padding: 10px 40px 13px 40px;
+  border: solid 1px #fff;
+  height: 76px;
+}
+
+.l-pageHeader .l-pageHeader__title h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #55504A;
+}
+
+@media screen and (max-width: 1024px) {
+  .l-pageHeader .l-pageHeader__title {
+    top: 193px;
+    left: 32px;
+    height: 70px;
+  }
+  .l-pageHeader .l-pageHeader__title h1 {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .l-pageHeader {
+    height: 300px;
+  }
+  .l-pageHeader .l-pageHeader__title {
+    top: 146px;
+    left: 20px;
+    height: 64px;
+  }
+  .l-pageHeader .l-pageHeader__title h1 {
+    font-size: 28px;
+  }
+}
+.p-access__profile {
+  display: flex;
+  margin: 0 auto;
+  gap: 169px;
+  max-width: 1080px;
+}
+.p-access__header {
+  width: 191px;
+}
+.p-access__title {
+  font-size: 32px;
+  font-weight: 500;
+  color: #55504A;
+}
+.p-access__list {
+  display: flex;
+  flex-direction: column;
+  width: 720px;
+}
+.p-access__content {
+  padding-left: 24px;
+}
+.p-access__item {
+  display: flex;
+  width: 100%;
+  padding: 24px 0;
+  border-bottom: 1px solid #55504A;
+}
+.p-access__item:last-child {
+  border-bottom: none;
+}
+.p-access__icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.p-access__method {
+  font-size: 18px;
+  font-weight: 700;
+  color: #55504A;
+}
+.p-access__details {
+  font-size: 16px;
+  font-weight: 400;
+  color: #55504A;
+}
+
+.map {
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  background: url("../images/access/map.png") lightgray;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.map::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .p-access__profile {
+    gap: 50px;
+    max-width: 770px;
+  }
+  .p-access__list {
+    width: 529px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .p-access__profile {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .p-access__header {
+    width: 335px;
+    height: 41px;
+  }
+  .p-access__title {
+    font-size: 28px;
+  }
+  .p-access__list {
+    width: 335px;
+  }
+  .p-access__item {
+    align-items: center;
+  }
+  .map {
+    height: 198px;
+  }
+}
+/*# sourceMappingURL=access.css.map */
