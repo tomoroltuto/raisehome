@@ -32,73 +32,69 @@ if (button && mainNav) {
   });
 }
 
-/**
- * 見出しをスクロール時のフェードイン設定
- */
+// /**
+//  * 見出しをスクロール時のフェードイン設定
+//  */
 const options = {
   root: null,
   rootMargin: "-20% 0px",
   threshold: 0,
 };
 
-const observer = new IntersectionObserver(fadeIn, options);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) entry.target.classList.add("fadeIn");
+  });
+}, options);
+
 document.querySelectorAll(".is-visible").forEach((visible) => {
   observer.observe(visible);
 });
 
-/**
- * 交差開始時に見出し部に .fadeIn を付与
- * @param {IntersectionObserverEntry[]} entries
- */
-function fadeIn(entries) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("fadeIn");
-    }
+if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+
+  /** GSAP に ScrollTrigger プラグインを登録（初期化）*/
+  gsap.registerPlugin(ScrollTrigger);
+
+  /**
+   * パララックス効果: mainvisualに付与
+   */
+  gsap.to(".section--parallax .swiper-slide", {
+    backgroundPosition: "50% 80%",
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".p-mainvisual.section--parallax",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  /**
+   * パララックス効果：worksに付与
+   */
+  gsap.to(".p-works.section--parallax", {
+    backgroundPosition: "50% 80%",
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".p-works.section--parallax",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  /**
+   * パララックス効果：contactに付与
+   */
+  gsap.to(".p-contact.section--parallax", {
+    backgroundPosition: "50% 80%",
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".p-contact.section--parallax",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
   });
 }
-
-/** GSAP に ScrollTrigger プラグインを登録（初期化）*/
-gsap.registerPlugin(ScrollTrigger);
-
-/**
- * パララックス効果: mainvisualに付与
- */
-gsap.to(".section--parallax .swiper-slide", {
-  backgroundPosition: "50% 80%",
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".p-mainvisual.section--parallax",
-    start: "top bottom",
-    end: "bottom top",
-    scrub: true,
-  },
-});
-
-/**
- * パララックス効果：worksに付与
- */
-gsap.to(".p-works.section--parallax", {
-  backgroundPosition: "50% 80%",
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".p-works.section--parallax",
-    start: "top bottom",
-    end: "bottom top",
-    scrub: true,
-  },
-});
-
-/**
- * パララックス効果：contactに付与
- */
-gsap.to(".p-contact.section--parallax", {
-  backgroundPosition: "50% 80%",
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".p-contact.section--parallax",
-    start: "top bottom",
-    end: "bottom top",
-    scrub: true,
-  },
-});
