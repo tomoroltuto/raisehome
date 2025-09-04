@@ -1,0 +1,95 @@
+@use "../../foundation/variables";
+
+.c-button-white {
+  width: 220px;
+  height: 47px;
+  border: solid 1px variables.$color-gray;
+  color: variables.$color-gray;
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+
+  &::before {
+    content: "";
+    width: 17px;
+    height: 1px;
+    background-color: variables.$color-gray;
+    position: absolute;
+    top: 24px;
+    right: 21px;
+  }
+
+  &::after {
+    content: "";
+    width: 8px;
+    height: 1px;
+    background-color: variables.$color-gray;
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    transform: rotate(35deg);
+  }
+
+  &:hover {
+    background-color: variables.$color-gray;
+    color: variables.$color-white;
+
+    &::before,
+    &::after {
+      background-color: variables.$color-white;
+    }
+  }
+}
+
+.c-button-gray {
+  width: 220px;
+  height: 47px;
+  background-color: variables.$color-gray;
+  color: variables.$color-white;
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+
+  &::before {
+    content: "";
+    width: 17px;
+    height: 1px;
+    background-color: variables.$color-white;
+    position: absolute;
+    top: 24px;
+    right: 21px;
+  }
+
+  &::after {
+    content: "";
+    width: 8px;
+    height: 1px;
+    background-color: variables.$color-white;
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    transform: rotate(35deg);
+  }
+
+  &:hover {
+    background-color: variables.$color-accent;
+    color: variables.$color-white;
+
+    &::before,
+    &::after {
+      background-color: variables.$color-white;
+    }
+  }
+}
+
+@media screen and (max-width: variables.$bp-tab) {
+  .c-button-white {
+    width: 175px;
+  }
+}

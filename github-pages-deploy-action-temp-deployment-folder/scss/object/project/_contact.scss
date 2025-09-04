@@ -1,0 +1,83 @@
+@use "../../layout/pageHeader";
+@use "../../foundation/variables";
+
+.p-contact {
+  &__profile {
+    display: flex;
+    margin: 0 auto;
+    gap: 169px;
+    max-width: 1080px;
+  }
+
+  &__header {
+    width: 353px;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 500;
+    color: variables.$color-gray;
+    line-height: normal;
+  }
+
+  &__form {
+    width: 560px;
+  }
+
+  &__agree {
+    margin: 0 auto;
+    text-align: center;
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    label {
+      color: variables.$color-gray;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
+  &__actions {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: variables.$bp-tab) {
+  .p-contact {
+    &__profile {
+      gap: 50px;
+      max-width: 770px;
+    }
+    &__form {
+      width: 368px;
+    }
+  }
+}
+
+@media screen and (max-width: variables.$bp-sp) {
+
+  .p-contact {
+    &__profile {
+      flex-direction: column;
+      gap: 50px;
+      max-width: 335px;
+    }
+
+    &__header {
+      width: 308px;
+      height: 82px;
+    }
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__form {
+      width: 335px;
+    }
+  }
+}
