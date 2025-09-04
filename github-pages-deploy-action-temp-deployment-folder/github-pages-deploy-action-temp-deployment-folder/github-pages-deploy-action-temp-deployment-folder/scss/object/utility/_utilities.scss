@@ -1,0 +1,8 @@
+.is-visible{
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.is-visible.fadeIn{
+  opacity: 1;
+}
