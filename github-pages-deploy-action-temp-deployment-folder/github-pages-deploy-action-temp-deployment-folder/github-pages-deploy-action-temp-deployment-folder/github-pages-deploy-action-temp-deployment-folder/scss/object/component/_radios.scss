@@ -1,0 +1,25 @@
+@use "../../foundation/variables";
+
+.c-radioGroup {
+  margin-top: 10px;
+  display: flex;
+
+  &__option {
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+    label {
+      cursor: pointer;
+      font-size: 14px;
+      padding-right: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: variables.$bp-sp) {
+  .c-radioGroup {
+    display: grid;
+    width: 220px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
